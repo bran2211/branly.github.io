@@ -1,0 +1,229 @@
+/* Paleta de colores */
+:root {
+    --background-color: #1a1c33; /* Fondo principal oscuro */
+    --menu-background-color: #20242d; /* Fondo del menú */
+    --highlight-color: #6ff6fe; /* Acentos en azul */
+    --accent-color: #01eefe; /* Azul brillante para botones/enlaces */
+    --text-color: #ffffff; /* Texto en blanco */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: var(--highlight-color);
+}
+
+#sidebar {
+    width: 250px;
+    background-color: var(--menu-background-color);
+    padding: 20px;
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que el menú quede encima del contenido */
+}
+
+#profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+#profile h1 {
+    font-size: 20px;
+    margin: 0;
+    color: var(--highlight-color); 
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+#sidebar ul li {
+    margin-bottom: 15px;
+}
+
+#sidebar ul li a {
+    color: var(--text-color); 
+    text-decoration: none;
+    display: block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5; 
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+#sidebar ul li a:hover {
+    background-color: var(--highlight-color);
+    color: #000000; /* Cambiar el color del texto a negro para mayor contraste */
+}
+
+#sidebar ul li a:focus {
+    outline: 2px dashed var(--highlight-color); /* Enfoque claro con un borde punteado */
+    outline-offset: 4px;
+}
+
+#content {
+    margin-left: 280px; /* Aumentar el margen para mayor separación */
+    padding: 20px;
+    background-color: var(--background-color); /* Fondo oscuro también para el contenido */
+    color: var(--text-color); /* Texto en blanco */
+    min-height: calc(100vh - 50px); /* Ajuste para que no se superponga el menú con el footer */
+    border-left: 1px solid var(--highlight-color); /* Línea de separación minimalista */
+    opacity: 0; /* Inicia invisible */
+    transform: translateY(20px); /* Mueve ligeramente hacia abajo */
+    animation: fadeInUp 1s ease-in-out forwards; /* Añade la animación */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill h3 {
+    font-size: 14px; /* Reducir el tamaño del título */
+    margin-bottom: 5px;
+    color: var(--text-color); /* Títulos en blanco */
+    text-transform: uppercase; /* Opcional: convertir el texto en mayúsculas */
+    font-weight: normal; /* Mantener el peso de la fuente normal */
+}
+
+.skill-bar {
+    background-color: #2a2d3e; /* Fondo de la barra en un tono más oscuro */
+    border-radius: 4px;
+    overflow: hidden;
+    height: 14px; /* Reducir la altura de la barra */
+    width: 50%; /* Ajustar el ancho de la barra al 50% del contenido */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skill-level {
+    background-color: #4a6fa5; /* Color frío y contrastante para las barras */
+    height: 100%;
+    border-radius: 4px 0 0 4px;
+    transition: width 0.5s ease-in-out;
+}
+
+h2 {
+    color: var(--highlight-color);
+    padding-bottom: 10px;
+}
+
+h2, h3, p {
+    text-decoration: none; /* Quitar subrayado de todos los títulos y párrafos */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--highlight-color);
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.project {
+    background-color: var(--menu-background-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.project h3 {
+    margin: 10px 0 0;
+    font-size: 16px;
+    text-align: center;
+    color: var(--text-color); /* Títulos en blanco */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.project a {
+    text-decoration: none; /* Eliminar subrayado en el enlace */
+}
+
+.project p {
+    font-size: 14px;
+    color: var(--highlight-color);
+    text-align: left;
+    text-decoration: none; /* Sin subrayado en la descripción */
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#contact a {
+    color: var(--text-color); /* Correo en blanco */
+    text-decoration: none; /* Sin subrayado */
+}
